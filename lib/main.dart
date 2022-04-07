@@ -2,20 +2,27 @@ import 'package:flutter/material.dart';
 import 'package:plant/User.dart';
 import 'package:plant/database.dart';
 import 'package:plant/dbOperations.dart';
+import 'package:plant/home.dart';
+import 'package:plant/login.dart';
 import 'package:plant/my_scaffold.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final db = await database().initalizeDB();
-  var fido = User(email: 'e.arkorful@gmail.com', password: 'password');
-  print(fido);
-  DBOperations(db).insertUser(fido);
 
-  DBOperations(db).retrieveUsers().then((users) {
-    users.forEach((user) => print(user));
-  });
-
-  runApp(const MyApp());
+  var users = await DBOperations(db).retrieveUsers();
+  if (users.isNotEmpty) {
+    return runApp(
+      MaterialApp(
+        home: HomeView(),
+      ),
+    );
+  }
+  runApp(
+    const MaterialApp(
+      home: LoginPage(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {

@@ -13,18 +13,20 @@ class MyScaffold extends StatelessWidget {
         width: MediaQuery.of(context).size.width,
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('images/teemy.jpg'),
+            image: AssetImage('images/mathematics.jpg'),
             fit: BoxFit.cover,
           ),
         ),
         child: Column(
           children: [
             SizedBox(height: MediaQuery.of(context).size.height * 0.15),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 32.0),
+            Container(
+              color: Color.fromARGB(255, 0, 0, 0).withOpacity(.4),
+              padding: EdgeInsets.symmetric(horizontal: 24.0),
               child: Text(
-                'The best app for your plants',
-                style: TextStyle(color: Colors.white, fontSize: 64),
+                'Practice your Mathematics',
+                style: TextStyle(
+                    color: Color.fromARGB(255, 182, 194, 18), fontSize: 58),
               ),
             ),
             SizedBox(height: MediaQuery.of(context).size.height * 0.15),
@@ -50,7 +52,7 @@ class MyScaffold extends StatelessWidget {
                   },
                   child: const Text('Sign Up',
                       style: TextStyle(
-                          color: Color(0xff2EB886),
+                          color: Color.fromARGB(255, 182, 194, 18),
                           fontSize: 20,
                           fontWeight: FontWeight.bold)),
                   style: ButtonStyle(
@@ -64,9 +66,10 @@ class MyScaffold extends StatelessWidget {
               margin: EdgeInsets.only(
                   bottom: MediaQuery.of(context).size.height * 0.02),
               decoration: BoxDecoration(
-                  // border: Border.all(color: Colors.white, width: 3),
-                  borderRadius: BorderRadius.circular(50.0),
-                  color: const Color(0xff2EB886)),
+                // border: Border.all(color: Colors.white, width: 3),
+                borderRadius: BorderRadius.circular(50.0),
+                color: const Color.fromARGB(255, 182, 194, 18),
+              ),
               child: SizedBox(
                 width: MediaQuery.of(context).size.width * 0.8,
                 height: MediaQuery.of(context).size.height * 0.07,

@@ -17,7 +17,7 @@ class RegisterPage extends StatelessWidget {
             width: MediaQuery.of(context).size.width,
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('images/teemy.jpg'),
+                image: AssetImage('images/mathematics.jpg'),
                 fit: BoxFit.cover,
               ),
             ),
@@ -58,19 +58,27 @@ class RegisterPage extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      const Text(
-                        'Register',
-                        style: TextStyle(
-                            fontSize: 42,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold),
-                      ),
-                      Text(
-                        'Create your new account',
-                        style: TextStyle(
-                            fontSize: 20,
-                            color: Colors.white.withOpacity(0.9),
-                            fontWeight: FontWeight.bold),
+                      Container(
+                        width: MediaQuery.of(context).size.width,
+                        color: Color.fromARGB(255, 0, 0, 0).withOpacity(.4),
+                        child: Column(
+                          children: [
+                            Text(
+                              'Register',
+                              style: TextStyle(
+                                  fontSize: 42,
+                                  color: Color.fromARGB(255, 199, 199, 0),
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            Text(
+                              'Create your new account',
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  color: Color.fromARGB(255, 199, 199, 0),
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ],
+                        ),
                       ),
                     ],
                   ),
@@ -82,6 +90,8 @@ class RegisterPage extends StatelessWidget {
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(
                             MediaQuery.of(context).size.width * 0.1),
+                        topRight: Radius.circular(
+                            MediaQuery.of(context).size.width * 0.1),
                       ),
                       color: Colors.white,
                     ),
@@ -90,23 +100,23 @@ class RegisterPage extends StatelessWidget {
                         SizedBox(
                           height: MediaQuery.of(context).size.height * 0.1,
                         ),
-                        formField(context, 'First Name'),
+                        formField(context, 'First Name', () {}),
                         SizedBox(
                           height: MediaQuery.of(context).size.height * 0.025,
                         ),
-                        formField(context, 'Last Name'),
+                        formField(context, 'Last Name', () {}),
                         SizedBox(
                           height: MediaQuery.of(context).size.height * 0.025,
                         ),
-                        formField(context, 'Email'),
+                        formField(context, 'Email', () {}),
                         SizedBox(
                           height: MediaQuery.of(context).size.height * 0.025,
                         ),
-                        formField(context, 'Password'),
+                        formField(context, 'Password', () {}),
                         SizedBox(
                           height: MediaQuery.of(context).size.height * 0.025,
                         ),
-                        formField(context, 'Confirm Password'),
+                        formField(context, 'Confirm Password', () {}),
                         SizedBox(
                           height: MediaQuery.of(context).size.height * 0.025,
                         ),
@@ -118,7 +128,7 @@ class RegisterPage extends StatelessWidget {
                               child: Text(
                                 "By signing up, you agree to our ",
                                 style: TextStyle(
-                                    color: Colors.greenAccent[700],
+                                    color: Color.fromARGB(255, 223, 223, 0),
                                     fontWeight: FontWeight.bold),
                               ),
                             ),
@@ -137,7 +147,7 @@ class RegisterPage extends StatelessWidget {
                               child: Text(
                                 "and ",
                                 style: TextStyle(
-                                    color: Colors.greenAccent[700],
+                                    color: Color.fromARGB(255, 223, 223, 0),
                                     fontWeight: FontWeight.bold),
                               ),
                             ),
@@ -159,9 +169,10 @@ class RegisterPage extends StatelessWidget {
                                     bottom: MediaQuery.of(context).size.height *
                                         0.02),
                                 decoration: BoxDecoration(
-                                    // border: Border.all(color: Colors.white, width: 3),
-                                    borderRadius: BorderRadius.circular(50.0),
-                                    color: const Color(0xff2EB886)),
+                                  // border: Border.all(color: Colors.white, width: 3),
+                                  borderRadius: BorderRadius.circular(50.0),
+                                  color: Color.fromARGB(202, 223, 223, 0),
+                                ),
                                 child: SizedBox(
                                   width:
                                       MediaQuery.of(context).size.width * 0.8,
@@ -204,8 +215,9 @@ class RegisterPage extends StatelessWidget {
                                       },
                                       child: const Text(
                                         "Login",
-                                        style:
-                                            TextStyle(color: Color(0xff2EB886)),
+                                        style: TextStyle(
+                                            color: Color.fromARGB(
+                                                255, 223, 223, 0)),
                                       ),
                                     ),
                                   ],

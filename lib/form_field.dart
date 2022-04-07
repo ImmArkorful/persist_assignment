@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Widget formField(BuildContext context, String title) {
+Widget formField(BuildContext context, String title, Function onChanged) {
   return SizedBox(
     height: MediaQuery.of(context).size.height * 0.05,
     width: MediaQuery.of(context).size.width / 1.2,
@@ -8,16 +8,20 @@ Widget formField(BuildContext context, String title) {
       decoration: BoxDecoration(
         border: Border.all(color: Colors.grey.withOpacity(0.3)),
         borderRadius: BorderRadius.circular(30.0),
-        color: Colors.greenAccent[100]?.withOpacity(0.7),
+        color: Color.fromARGB(85, 223, 223, 0).withOpacity(0.2),
       ),
       child: Padding(
         padding: const EdgeInsets.only(left: 8.0),
         child: TextFormField(
+          onChanged: (text) {
+            onChanged(text);
+          },
           decoration: InputDecoration(
             border: const UnderlineInputBorder(borderSide: BorderSide.none),
-            labelText: title,
-            labelStyle: TextStyle(
-                color: Color(0xff2EB886), fontWeight: FontWeight.bold),
+            hintText: title,
+            hintStyle: TextStyle(
+                color: Color.fromARGB(255, 223, 223, 0),
+                fontWeight: FontWeight.bold),
           ),
         ),
       ),
